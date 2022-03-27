@@ -1,0 +1,8 @@
+    "custom/bbcweather": {
+        "format": "{}",
+        "on-click": "bbc-weather-cli",
+        "return-type": "json",
+        "tooltip": true,
+        "exec": "bbc-weather-cli",
+        "interval": 1800
+    }
