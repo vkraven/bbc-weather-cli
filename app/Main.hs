@@ -23,7 +23,7 @@ import qualified Data.Time.Calendar as Cal (Day, diffDays, dayOfWeek)
 import Data.Aeson.Encode.Pretty (encodePretty)
 import Data.List (sortOn, intersperse)
 import Data.List.Split (splitOn)
-import Data.Maybe (fromJust)
+import Data.Maybe (fromJust, fromMaybe)
 import qualified Network.URI.Encode as URIEnc (encode)
 
 configFile :: IO String
@@ -170,7 +170,7 @@ summaryReportToTooltipLine sr = (show . Cal.dayOfWeek $ sr_localDate sr) ++
                                       ": " ++
                                         (getWeatherTypeIcon $ sr_weatherType sr) ++ "  " ++
                                           "H: " ++ (show $ sr_maxTempC sr) ++ "\xe339 " ++
-                                          "L: " ++ (show $ sr_minTempC sr) ++ "\xe339 " ++
+                                          "L: " ++ (show $ fromMaybe (-999) $ sr_minTempC sr) ++ "\xe339 " ++
                                           "\xe371: " ++ (show $ sr_precipitationProbabilityInPercent sr) ++ "%" ++
                                             " | " ++ (sr_enhancedWeatherDescription sr)
 

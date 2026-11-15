@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               bbc-weather-cli
-version:            0.5.0.1
+version:            0.5.0.2
 synopsis:           A cli tool to fetch BBC weather reports and forecasts
 
 description:        A cli tool to fetch BBC weather reports from the BBC's JSON API.

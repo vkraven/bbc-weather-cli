@@ -276,18 +276,18 @@ data SummaryReport = SummaryReport {
   sr_uppermaxTemperatureF :: Maybe Integer,
   sr_upperminTemperatureC :: Maybe Integer,
   sr_upperminTemperatureF :: Maybe Integer,
-  sr_uvIndex :: Integer,
-  sr_uvIndexBand :: String,
-  sr_uvIndexIconText :: String,
-  sr_uvIndexText :: String,
+  sr_uvIndex :: Maybe Integer,
+  sr_uvIndexBand :: Maybe String,
+  sr_uvIndexIconText :: Maybe String,
+  sr_uvIndexText :: Maybe String,
   sr_weatherType :: Integer,
   sr_weatherTypeText :: String,
-  sr_windDescription :: String,
-  sr_windDirection :: String,
-  sr_windDirectionAbbreviation :: String,
-  sr_windDirectionFull :: String,
-  sr_windSpeedKph :: Integer,
-  sr_windSpeedMph :: Integer
+  sr_windDescription :: Maybe String,
+  sr_windDirection :: Maybe String,
+  sr_windDirectionAbbreviation :: Maybe String,
+  sr_windDirectionFull :: Maybe String,
+  sr_windSpeedKph :: Maybe Integer,
+  sr_windSpeedMph :: Maybe Integer
   } deriving (Eq, Show, Generic)
 
 instance ToJSON SummaryReport where
@@ -336,8 +336,8 @@ instance FromJSON DetailedForecast where
 data DetailedReport = DetailedReport {
   dr_enhancedWeatherDescription :: String,
   dr_extendedWeatherType :: Integer,
-  dr_feelsLikeTemperatureC :: Integer,
-  dr_feelsLikeTemperatureF :: Integer,
+  dr_feelsLikeTemperatureC :: Maybe Integer,
+  dr_feelsLikeTemperatureF :: Maybe Integer,
   dr_gustSpeedKph :: Maybe Integer,
   dr_gustSpeedMph :: Maybe Integer,
   dr_humidity :: Integer,
@@ -349,15 +349,15 @@ data DetailedReport = DetailedReport {
   dr_temperatureF :: Integer,
   dr_timeslot :: String,
   dr_timeslotLength :: Integer,
-  dr_visibility :: String,
+  dr_visibility :: Maybe String,
   dr_weatherType :: Integer,
   dr_weatherTypeText :: String,
-  dr_windDescription :: String,
-  dr_windDirection :: String,
-  dr_windDirectionAbbreviation :: String,
-  dr_windDirectionFull :: String,
-  dr_windSpeedKph :: Integer,
-  dr_windSpeedMph :: Integer
+  dr_windDescription :: Maybe String,
+  dr_windDirection :: Maybe String,
+  dr_windDirectionAbbreviation :: Maybe String,
+  dr_windDirectionFull :: Maybe String,
+  dr_windSpeedKph :: Maybe Integer,
+  dr_windSpeedMph :: Maybe Integer
   } deriving (Eq, Show, Generic)
 
 instance ToJSON DetailedReport where

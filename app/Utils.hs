@@ -16,6 +16,7 @@ import System.Directory
 import System.IO (FilePath)
 import Control.Monad (filterM)
 import Data.List (intersperse)
+import Data.Maybe (fromMaybe)
 
 bbcConfDir :: String
 bbcConfDir = "bbc-weather-cli"
@@ -116,8 +117,8 @@ detailedReportToMainStatus dr = (getWeatherTypeIcon $ dr_extendedWeatherType dr)
 
 detailedReportToAltStatus :: DetailedReport -> String
 detailedReportToAltStatus dr = "\xe3a9" ++
-                                 " " ++ (show $ dr_windSpeedKph dr) ++ " kph " ++
-                                   (dr_windDirectionAbbreviation dr) ++ " " ++
+                                 " " ++ (show $ fromMaybe (-1) (dr_windSpeedKph dr)) ++ " kph " ++
+                                   (fromMaybe "N/A" (dr_windDirectionAbbreviation dr)) ++ " " ++
                                      "\xe371:" ++ " " ++ (show $ dr_precipitationProbabilityInPercent dr) ++
                                        "% | " ++ (dr_enhancedWeatherDescription dr)
 

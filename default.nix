@@ -4,7 +4,7 @@
 }:
 mkDerivation {
   pname = "bbc-weather-cli";
-  version = "0.5.0.0";
+  version = "0.5.0.2";
   src = ./.;
   isLibrary = false;
   isExecutable = true;
@@ -16,4 +16,5 @@ mkDerivation {
   homepage = "https://github.com/vkraven/bbc-weather-cli";
   description = "A cli tool to fetch BBC weather reports and forecasts";
   license = lib.licenses.gpl3Plus;
+  mainProgram = "bbc-weather-cli";
 }
